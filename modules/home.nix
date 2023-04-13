@@ -15,9 +15,6 @@ let
   };
 in
 {
-  imports = [
-  ];
-
   programs = {
     home-manager.enable = true;
     neovim.enable = true;
@@ -107,7 +104,7 @@ in
       jcal
       cliphist
       wl-clipboard
-      gtkcord4
+      # gtkcord4
       pulseaudio
       lsof
       diff-so-fancy

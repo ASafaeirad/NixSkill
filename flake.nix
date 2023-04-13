@@ -33,7 +33,6 @@
           extraSpecialArgs = { inherit hypr-contrib user; };
           modules = [
             hyprland.homeManagerModules.default
-            { wayland.windowManager.hyprland.enable = true; }
             ./modules/home.nix
             ./modules/gtk.nix
             ./modules/hyprland.nix
