@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+set -e
+
+SPACE=$1
+
+NIXPKGS_ALLOW_UNFREE=1
+
+[[ ! "$SPACE" = "user" ]] && sudo nixos-rebuild switch --flake .#
+
+if [ ! "$SPACE" = "system" ]; then
+  nix build --impure .#hmConfig.skill.activationPackage
+  ./result/activate
+fi
