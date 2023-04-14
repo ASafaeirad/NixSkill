@@ -34,7 +34,7 @@ in
     };
   };
 
-  sessionVariables = {
+  home.sessionVariables = {
     ZDOTDIR = "${config.xdg.configHome}/zsh";
   };
 }
