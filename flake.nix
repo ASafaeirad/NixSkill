@@ -39,6 +39,7 @@
             ./modules/gtk.nix
             ./modules/hyprland.nix
             ./modules/mako.nix
+            ./modules/gpg.nix
           ];
         };
       };

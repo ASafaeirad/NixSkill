@@ -1,143 +1,102 @@
 { config, pkgs, user, ... }:
 
-let
-  locale = "en_US.UTF-8";
-  timezone = "Asia/Yerevan";
-in
 {
-  imports = [
-    ./hardware-configuration.nix
-  ];
-
-  boot.loader = {
-    systemd-boot.enable = true;
-    efi.canTouchEfiVariables = true;
-    efi.efiSysMountPoint = "/boot/efi";
-    grub.configurationLimit = 2;
-  };
-
-  networking.hostName = "nix-skill";
-  networking.networkmanager = {
-    enable = true;
-    plugins = with pkgs; [
-      networkmanager-openvpn
-    ];
-  };
-
-  time.timeZone = timezone;
-
-  i18n = {
-    defaultLocale = locale;
-    extraLocaleSettings = {
-      LC_ADDRESS = locale;
-      LC_IDENTIFICATION = locale;
-      LC_MEASUREMENT = locale;
-      LC_MONETARY = locale;
-      LC_NAME = locale;
-      LC_NUMERIC = locale;
-      LC_PAPER = locale;
-      LC_TELEPHONE = locale;
-      LC_TIME = locale;
-    };
-  };
-
+  imports = [ ./hardware-configuration.nix ];
   users = {
     groups = {
       skill = { };
     };
-    defaultUserShell = pkgs.zsh;
+    # defaultUserShell = pkgs.zsh;
     users = {
       skill = {
         isNormalUser = true;
         description = user;
-        shell = pkgs.zsh;
+        # shell = pkgs.zsh;
         extraGroups = [ "networkmanager" "wheel" "skill" ];
         packages = with pkgs; [ ];
       };
     };
   };
 
-
-  programs = {
-    zsh = {
-      enable = true;
-      loginShellInit = ''
-        if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
-           exec Hyprland
-        fi
-      '';
+  boot = {
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+      efi.efiSysMountPoint = "/boot/efi";
+      grub.configurationLimit = 2;
     };
-    # dconf.enable = true;
-    # light.enable = true;
-    # mtr.enable = true;
-    gnupg.agent = {
-      enable = true;
-      enableSSHSupport = true;
-    };
+    kernelParams = [
+      "quiet"
+      "splash"
+      "nvidia-drm.modeset=1"
+    ];
+    consoleLogLevel = 0;
+    initrd.verbose = false;
   };
 
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.input-fonts.acceptLicense = true;
 
-  environment.systemPackages = with pkgs; [
-    tmux
-    git
-    neovim
-    wget
-    exa
-    unzip
-    ffmpeg
-    ffmpegthumbnailer
-    glib
-    pciutils
-    killall
-    zip
-    rar
-    # keyd
-  ];
-  environment.shells = with pkgs; [ zsh ];
+  environment = {
+    systemPackages = with pkgs; [
+      libnotify
+      wl-clipboard
+      wlr-randr
+      wayland
+      wayland-scanner
+      wayland-utils
+      egl-wayland
+      wayland-protocols
+      pkgs.xorg.xeyes
+      glfw-wayland
+      xwayland
+      pkgs.qt6.qtwayland
+      cinnamon.nemo
+      networkmanagerapplet
+      wev
+      wf-recorder
+      alsa-lib
+      alsa-utils
+      flac
+      pulsemixer
+      linux-firmware
+      sshpass
+      lxappearance
+      imagemagick
+      pkgs.sway-contrib.grimshot
+      flameshot
+      grim
+    ];
+  };
 
-  security.rtkit.enable = true;
-  security.sudo.extraRules = [
-    {
-      users = [ user ];
-      commands = [
-        {
-          command = "ALL";
-          options = [ "SETENV" "NOPASSWD" ];
-        }
-      ];
-    }
-  ];
+  console.useXkbConfig = true;
 
-  services.pipewire = {
+  services = {
+    dbus.packages = [ pkgs.gcr ];
+    getty.autologinUser = "${user}";
+    gvfs.enable = true;
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+      jack.enable = true;
+    };
+  };
+
+  security.polkit.enable = true;
+  security.sudo = {
+    enable = false;
+    extraConfig = ''
+      ${user} ALL=(ALL) NOPASSWD:ALL
+    '';
+  };
+  security.doas = {
     enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    wireplumber.enable = true;
+    extraConfig = ''
+      permit nopass :wheel
+    '';
   };
-
-  # services.dbus.enable = true;
-
-  nix = {
-    settings = {
-      auto-optimise-store = true;
-      experimental-features = [ "nix-command" "flakes" ];
-      allowed-users = [ "root" user ];
-    };
-    gc = {
-      automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 30d";
-    };
-  };
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "22.11"; # Did you read the comment?
 
 }

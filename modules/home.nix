@@ -83,7 +83,6 @@
       EDITOR = "nvim";
       BROWSER = "brave";
       TERMINAL = "alacritty";
-      GNUPGHOME = "${config.xdg.dataHome}/gnupg";
       LESSHISTFILE = "/dev/null";
       WGETRC = "${config.xdg.configHome}/wget/wgetrc";
       INPUTRC = "${config.xdg.configHome}/inputrc";
