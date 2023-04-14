@@ -45,6 +45,7 @@
             ./modules/gpg.nix
             ./modules/gammastep.nix
             ./modules/neofetch
+            ./modules/obs-studio
           ];
         };
       };
