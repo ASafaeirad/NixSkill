@@ -9,7 +9,7 @@ lib.nixosSystem rec {
   modules = [
     inputs.hyprland.nixosModules.default
     ./configuration.nix
-    ../../modules/docker.nix
-    ../../modules/fonts.nix
+    ../common/docker.nix
+    ../common/fonts.nix
   ];
 }
