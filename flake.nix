@@ -40,6 +40,7 @@
             ./modules/zsh.nix
             ./modules/gtk.nix
             ./modules/hyprland.nix
+            ./modules/music.nix
             ./modules/mako.nix
             ./modules/gpg.nix
             ./modules/gammastep.nix
