@@ -33,7 +33,9 @@
           extraSpecialArgs = { inherit hypr-contrib user; };
           modules = [
             hyprland.homeManagerModules.default
+            ./modules/xdg.nix
             ./modules/home.nix
+            ./modules/zsh.nix
             ./modules/gtk.nix
             ./modules/hyprland.nix
             ./modules/mako.nix
