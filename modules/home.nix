@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, hypr-contrib, user, ... }:
+{ config, pkgs, inputs, hypr-contrib, user, latitude, longitude, ... }:
 
 {
   programs = {
@@ -7,17 +7,7 @@
     vscode.enable = true;
   };
 
-  services = {
-    gammastep = {
-      enable = true;
-      latitude = 40.179188;
-      longitude = 44.499104;
-      temperature.night = 4500;
-    };
-    network-manager-applet.enable = true;
-  };
-
-   home = {
+  home = {
     stateVersion = "22.11";
     username = user;
     homeDirectory = "/home/${user}";

@@ -15,6 +15,8 @@
     let
       user = "skill";
       system = "x86_64-linux";
+      latitude = 40.179188;
+      longitude = 44.499104;
       lib = nixpkgs.lib;
       pkgs = import nixpkgs {
         inherit system nixpkgs;
@@ -30,7 +32,7 @@
       hmConfig = {
         skill = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.${system};
-          extraSpecialArgs = { inherit hypr-contrib user; };
+          extraSpecialArgs = { inherit hypr-contrib user latitude longitude; };
           modules = [
             hyprland.homeManagerModules.default
             ./modules/xdg.nix
@@ -40,6 +42,7 @@
             ./modules/hyprland.nix
             ./modules/mako.nix
             ./modules/gpg.nix
+            ./modules/gammastep.nix
           ];
         };
       };
