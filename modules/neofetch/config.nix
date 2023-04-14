@@ -3,13 +3,10 @@
   {
       info title
       info underline
-      info " " distro
-      info " " kernel
-      info " " packages
-      info " " de
-      info " " wm
-      info " " memory
-      info " " uptime
+      info "Distro " distro
+      info "Kernel " kernel
+      info "WM     " wm
+      info "Uptime " uptime
       info cols
   }
   title_fqdn="off"
@@ -64,10 +61,7 @@
   memory_display="off"
   battery_display="off"
   disk_display="off"
-  image_backend="kitty"
-  # image_source="${./sakurafetch.png}"
-  image_source="${./nixgirl.png}"
-  ascii_distro="auto"
+  ascii_distro="linux"
   ascii_colors=(distro)
   ascii_bold="on"
   image_loop="off"

@@ -44,6 +44,7 @@
             ./modules/mako.nix
             ./modules/gpg.nix
             ./modules/gammastep.nix
+            ./modules/neofetch
           ];
         };
       };
