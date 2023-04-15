@@ -22,6 +22,7 @@
       pass-wayland
       ripgrep
       wget
+      wtype
 
       # DE
       alacritty
