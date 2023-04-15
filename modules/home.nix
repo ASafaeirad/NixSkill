@@ -5,6 +5,7 @@
     home-manager.enable = true;
     neovim.enable = true;
     vscode.enable = true;
+    fzf.enable = true;
   };
 
   home = {
@@ -13,11 +14,14 @@
     homeDirectory = "/home/${user}";
     shellAliases = { };
     packages = with pkgs; [
-      nixpkgs-fmt
-      wget
+      bat
+      fd
       gnumake
-      pass-wayland
+      nixpkgs-fmt
       pass-git-helper
+      pass-wayland
+      ripgrep
+      wget
 
       # DE
       alacritty
@@ -32,7 +36,7 @@
       jcal
       cliphist
       wl-clipboard
-      # gtkcord4
+      gtkcord4
       pulseaudio
       lsof
       diff-so-fancy
@@ -49,6 +53,7 @@
       tdesktop
       discord
       notion-app-enhanced
+      skypeforlinux
     ];
 
     file = {
