@@ -6,9 +6,19 @@
        exec awesome
     fi
   '';
+
+  environment.systemPackages = with pkgs; [
+    awesome
+  ];
+
+  sound.enable = true;
+  hardware.pulseaudio.enable = true;
+
   services.xserver = {
     enable = true;
-    windowManager.awesome.enable = true;
+    layout = "us,ir";
+    xkbOptions = "grp:shifts_toggle,caps:escape";
+    libinput.enable = true;
     # disable automatic screen blanking and stuff, we'll do it manually instead
     serverFlagsSection = ''
       Option "BlankTime" "0"
