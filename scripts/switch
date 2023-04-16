@@ -4,5 +4,5 @@ set -e
 
 SPACE=$1
 
-./scripts/build "$@"
-[[ ! "$SPACE" = "system" ]] && ./result/activate
+[[ ! "$SPACE" = "user" ]] && sudo nixos-rebuild switch --flake .#
+[[ ! "$SPACE" = "system" ]] && home-manager switch --flake .#skill

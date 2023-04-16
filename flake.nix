@@ -34,7 +34,7 @@
           inherit inputs user system lib locale timezone;
         });
       };
-      hmConfig = {
+      homeConfigurations = {
         skill = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.${system};
           extraSpecialArgs = { inherit hypr-contrib user latitude longitude; };
