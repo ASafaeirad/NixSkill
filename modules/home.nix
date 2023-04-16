@@ -21,6 +21,8 @@
       ripgrep
       wget
       wtype
+      bc
+      inxi
 
       # DE
       alacritty
@@ -48,6 +50,7 @@
 
       # Apps
       brave
+      firefox
       slack
       tdesktop
       discord
