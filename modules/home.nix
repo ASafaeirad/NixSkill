@@ -12,7 +12,6 @@
     stateVersion = "22.11";
     username = user;
     homeDirectory = "/home/${user}";
-    shellAliases = { };
     packages = with pkgs; [
       bat
       fd
@@ -36,7 +35,6 @@
       qt5ct
       jcal
       cliphist
-      wl-clipboard
       gtkcord4
       pulseaudio
       lsof
