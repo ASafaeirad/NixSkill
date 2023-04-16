@@ -3,6 +3,7 @@
 {
   xdg = {
     enable = false;
+    configFile."mimeapps.list".force = true;
     mimeApps = {
       enable = true;
       defaultApplications = {
