@@ -18,6 +18,8 @@
     let
       user = "skill";
       system = "x86_64-linux";
+      locale = "en_US.UTF-8";
+      timezone = "Asia/Yerevan";
       latitude = 40.179188;
       longitude = 44.499104;
       lib = nixpkgs.lib;
@@ -29,7 +31,7 @@
     {
       nixosConfigurations = {
         nix-skill = (import ./hosts/nix-skill {
-          inherit inputs user system lib;
+          inherit inputs user system lib locale timezone;
         });
       };
       hmConfig = {

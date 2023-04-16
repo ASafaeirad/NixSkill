@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+set -e
+
+SPACE=$1
+
+./scripts/build "$@"
+[[ ! "$SPACE" = "system" ]] && ./result/activate

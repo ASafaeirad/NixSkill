@@ -1,9 +1,5 @@
-{ config, pkgs, user, ... }:
+{ config, pkgs, user, locale, timezone, ... }:
 
-let
-  locale = "en_US.UTF-8";
-  timezone = "Asia/Yerevan";
-in
 {
   imports = [
     ./docker.nix

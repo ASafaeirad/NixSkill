@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+set -e
+
+SPACE=$1
+
+[[ ! "$SPACE" = "user" ]] && sudo nixos-rebuild build --flake .#
+[[ ! "$SPACE" = "system" ]] && nix build --impure .#hmConfig.skill.activationPackage

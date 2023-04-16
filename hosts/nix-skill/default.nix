@@ -1,9 +1,9 @@
-{ lib, system, inputs, user, ... }:
+{ lib, system, inputs, user, locale, timezone, ... }:
 
 lib.nixosSystem rec {
   inherit system;
   specialArgs = {
-    inherit user;
+    inherit user locale timezone;
   };
 
   modules = [
