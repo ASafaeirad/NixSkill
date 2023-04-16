@@ -10,7 +10,8 @@ scripts: Common scripts files
 
 ## How to use
 
-I don't recommend to use the configuration off-the-shelf, clone it, get ideas and copy codes from it.
+I don't recommend using the configuration off the shelf. clone it, get ideas, and copy codes from it.
+Don't forget to update variables defined inside [flake.nix](https://github.com/ASafaeirad/NixSkill/blob/main/flake.nix).
 
 ## Credits
 
