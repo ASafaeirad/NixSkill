@@ -50,6 +50,7 @@
             ./modules/gammastep.nix
             ./modules/neofetch
             ./modules/obs-studio
+            ./modules/zathura.nix
           ];
         };
       };
