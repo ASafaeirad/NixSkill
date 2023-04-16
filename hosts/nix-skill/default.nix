@@ -7,7 +7,8 @@ lib.nixosSystem rec {
   };
 
   modules = [
-    inputs.hyprland.nixosModules.default
+    # inputs.hyprland.nixosModules.default
+    ../common/awesome.nix
     ../common/configuration.nix
     ./configuration.nix
   ];

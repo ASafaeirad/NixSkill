@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, hypr-contrib, user, latitude, longitude, ... }:
+{ config, pkgs, inputs, user, latitude, longitude, ... }:
 
 {
   programs = {
@@ -19,15 +19,10 @@
       nixpkgs-fmt
       ripgrep
       wget
-      wtype
-      bc
-      inxi
 
       # DE
       alacritty
       pavucontrol
-      rofi-wayland
-      wofi
       xdg-utils
       pcmanfm
       obsidian
@@ -40,7 +35,6 @@
       lsof
       diff-so-fancy
       htop
-      hypr-contrib.packages.${system}.grimblast
       mpv
       libnotify
       kooha

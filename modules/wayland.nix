@@ -1,4 +1,4 @@
-{  pkgs, ... }:
+{ pkgs, ... }:
 
 {
   home.packages = with pkgs; [
@@ -6,5 +6,6 @@
     rofi-wayland
     wofi
     wl-clipboard
+    wtype
   ];
 }

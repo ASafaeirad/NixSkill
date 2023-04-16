@@ -39,15 +39,16 @@
           pkgs = nixpkgs.legacyPackages.${system};
           extraSpecialArgs = { inherit hypr-contrib user latitude longitude; };
           modules = [
-            hyprland.homeManagerModules.default
+            # hyprland.homeManagerModules.default
             ./modules/alias.nix
             ./modules/bookmarks.nix
             ./modules/xdg.nix
             ./modules/home.nix
-            ./modules/wayland.nix
+            # ./modules/wayland.nix
+            ./modules/xorg.nix
             ./modules/zsh.nix
             ./modules/gtk.nix
-            ./modules/hyprland.nix
+            # ./modules/hyprland.nix
             ./modules/music.nix
             ./modules/mako.nix
             ./modules/gpg.nix
