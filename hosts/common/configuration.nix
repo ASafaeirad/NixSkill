@@ -38,7 +38,7 @@
         isNormalUser = true;
         description = user;
         shell = pkgs.zsh;
-        extraGroups = [ "networkmanager" "wheel" user ];
+        extraGroups = [ "networkmanager" "wheel" "video" user ];
       };
     };
   };
