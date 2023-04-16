@@ -51,6 +51,7 @@
             ./modules/neofetch
             ./modules/obs-studio
             ./modules/zathura.nix
+            ./modules/pass.nix
           ];
         };
       };

@@ -18,8 +18,6 @@
       fd
       gnumake
       nixpkgs-fmt
-      pass-git-helper
-      pass-wayland
       ripgrep
       wget
       wtype
@@ -58,21 +56,7 @@
       networkmanagerapplet
     ];
 
-    file = {
-      # # Building this configuration will create a copy of 'dotfiles/screenrc' in
-      # # the Nix store. Activating the configuration will then make '~/.screenrc' a
-      # # symlink to the Nix store copy.
-      # ".screenrc".source = dotfiles/screenrc;
-
-      # # You can also set the file content immediately.
-      # ".gradle/gradle.properties".text = ''
-      #   org.gradle.console=verbose
-      #   org.gradle.daemon.idletimeout=3600000
-      # '';
-    };
-
     sessionVariables = {
-      # WLR_NO_HARDWARE_CURSORS = "1"; # if no cursor,uncomment this line
       TERM = "xterm-256color";
       SUDOEDITOR = "nvim";
       READER = "zathura";
@@ -84,7 +68,6 @@
       WGETRC = "${config.xdg.configHome}/wget/wgetrc";
       INPUTRC = "${config.xdg.configHome}/inputrc";
       KODI_DATA = "${config.xdg.dataHome}/kodi";
-      PASSWORD_STORE_DIR = "${config.xdg.dataHome}/password-store";
       ANDROID_SDK_HOME = "${config.xdg.configHome}/android";
       ANSIBLE_CONFIG = "${config.xdg.configHome}/ansible/ansible.cfg";
       UNISON = "${config.xdg.dataHome}/unison";
