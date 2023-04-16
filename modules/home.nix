@@ -55,6 +55,7 @@
       discord
       notion-app-enhanced
       skypeforlinux
+      networkmanagerapplet
     ];
 
     file = {
