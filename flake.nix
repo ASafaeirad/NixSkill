@@ -40,6 +40,8 @@
           extraSpecialArgs = { inherit hypr-contrib user latitude longitude; };
           modules = [
             hyprland.homeManagerModules.default
+            ./modules/alias.nix
+            ./modules/bookmarks.nix
             ./modules/xdg.nix
             ./modules/home.nix
             ./modules/wayland.nix
