@@ -14,8 +14,11 @@
      dbus-update-activation-environment DISPLAY XAUTHORITY
     fi
 
+    xrdb -merge $XDG_CONFIG_HOME/X11/Xresources
+
     # eval $(gnome-keyring-daemon --start) &
     xset b off
+    picom -b
     nitrogen --restore &
     copyq &
     restart-flashfocus &

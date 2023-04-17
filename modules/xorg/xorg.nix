@@ -68,9 +68,4 @@
       "!*letterSpace" = 1;
     };
   };
-
-  xsession = {
-    enable = true;
-    numlock.enable = true;
-  };
 }
