@@ -15,5 +15,6 @@
     nitrogen
     copyq
     flashfocus
+    flameshot
   ];
 }
