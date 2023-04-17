@@ -45,7 +45,7 @@
             ./modules/xdg.nix
             ./modules/home.nix
             # ./modules/wayland.nix
-            ./modules/xorg.nix
+            ./modules/xorg
             ./modules/zsh.nix
             ./modules/gtk.nix
             # ./modules/hyprland.nix
