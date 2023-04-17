@@ -18,7 +18,7 @@
       fsType = "ext4";
     };
 
-  fileSystems."/home/arch" =
+  fileSystems."/home" =
     { device = "/dev/disk/by-uuid/0eadee3f-f3c8-4923-820f-51153e71d1a1";
       fsType = "ext4";
     };
