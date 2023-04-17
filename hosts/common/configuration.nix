@@ -73,6 +73,7 @@
     rar
     inxi
     bc
+    acpi
   ];
   environment.shells = with pkgs; [ zsh ];
 
