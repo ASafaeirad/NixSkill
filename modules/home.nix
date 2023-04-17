@@ -39,6 +39,7 @@
       libnotify
       kooha
       imv
+      networkmanagerapplet
 
       # Apps
       brave
@@ -48,7 +49,7 @@
       discord
       notion-app-enhanced
       skypeforlinux
-      networkmanagerapplet
+      anydesk
     ];
 
     sessionVariables = {
