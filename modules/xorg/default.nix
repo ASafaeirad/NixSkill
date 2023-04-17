@@ -10,6 +10,7 @@
 
   home.packages = with pkgs; [
     xsel
+    xdotool
     rofi
     nitrogen
     copyq
