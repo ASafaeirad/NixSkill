@@ -34,7 +34,7 @@ _: {
     "cpssh" = "gpg --export-ssh-key frontendmonster@gmail.com | xsel -i --clipboard";
     "gpgreload" = "gpg-connect-agent reloadagent /bye";
     "x" = "sudo chmod +x";
-    "path" = "\${PATH//:/\\n} | sort";
+    "path" = "echo \${PATH//:/\\\\n} | sort";
     "fpath" = "$fpath | tr ' ' '\n' | sort";
     "findstr" = "grep -rnw";
     "afind" = "ack -il";

@@ -10,12 +10,11 @@
     ];
 
     sessionVariables = {
-      NPM_CONFIG_CACHE = "$XDG_CACHE_HOME/npm";
-      NPM_CACHE_PREFIX = "$XDG_CACHE_HOME/npm";
       PATH = "$(yarn global bin):$PATH";
     };
 
     shellAliases = {
+      npmrc = "$EDITOR $XDG_CONFIG_HOME/npm/npmrc";
       npmls = "npm ls --depth 0";
       npmi = "ni";
       npmg = "npm install --location=global";
@@ -27,5 +26,9 @@
       cleannm = "find . -name 'node_modules' -type d -exec rm -rf {} \;";
       renpm = "rm -rf node_modules && rm ./package-lock.json && npm i";
     };
+
+    sessionPath = [
+      "$XDG_DATA_HOME/npm/bin"
+    ];
   };
 }
