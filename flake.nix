@@ -25,31 +25,45 @@
       lib = nixpkgs.lib;
       pkgs = import nixpkgs {
         inherit system nixpkgs;
-        config = { allowUnfree = true; };
+        overlays = [
+          (self: super: {
+            cypress = super.cypress.overrideAttrs (old: {
+              version = "12.9.0";
+
+              src = super.fetchzip {
+                url = "https://cdn.cypress.io/desktop/12.9.0/linux-x64/cypress.zip";
+                sha256 = "sha256-26mkizwkF0qPX2+0rkjep28ZuNlLGPljCvVO73t34Lk=";
+              };
+            });
+          })
+        ];
+        config = {
+          allowUnfree = true;
+          input-fonts.acceptLicense = true;
+        };
       };
     in
     {
       nixosConfigurations = {
         nix-skill = (import ./hosts/nix-skill {
-          inherit inputs user system lib locale timezone;
+          inherit pkgs inputs user system lib locale timezone;
         });
       };
       homeConfigurations = {
         skill = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.${system};
+          inherit pkgs;
           extraSpecialArgs = { inherit hypr-contrib user latitude longitude; };
           modules = [
-            # hyprland.homeManagerModules.default
+            ./modules/wayland
+            # ./modules/xorg
+
             ./modules/alias.nix
             ./modules/bookmarks.nix
             ./modules/xdg.nix
             ./modules/home.nix
             ./modules/node.nix
-            # ./modules/wayland.nix
-            ./modules/xorg
             ./modules/zsh.nix
             ./modules/gtk.nix
-            # ./modules/hyprland.nix
             ./modules/music.nix
             ./modules/mako.nix
             ./modules/gpg.nix

@@ -6,7 +6,7 @@
       nodejs
       yarn
       nodePackages.pnpm
-      nodePackages."@antfu/ni"
+      # cypress
     ];
 
     sessionVariables = {

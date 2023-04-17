@@ -1,14 +1,16 @@
-{ lib, system, inputs, user, locale, timezone, ... }:
+{ lib, system, pkgs, inputs, user, locale, timezone, ... }:
 
 lib.nixosSystem rec {
-  inherit system;
+  inherit system pkgs;
   specialArgs = {
     inherit user locale timezone;
   };
 
   modules = [
-    # inputs.hyprland.nixosModules.default
-    ../common/awesome.nix
+    inputs.hyprland.nixosModules.default
+    ../common/hyprland.nix
+
+    # ../common/awesome.nix
     ../common/configuration.nix
     ./configuration.nix
   ];
