@@ -44,6 +44,7 @@
             ./modules/bookmarks.nix
             ./modules/xdg.nix
             ./modules/home.nix
+            ./modules/node.nix
             # ./modules/wayland.nix
             ./modules/xorg
             ./modules/zsh.nix
