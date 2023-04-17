@@ -52,10 +52,10 @@
       homeConfigurations = {
         skill = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
-          extraSpecialArgs = { inherit hypr-contrib user latitude longitude; };
+          extraSpecialArgs = { inherit hypr-contrib hyprland user latitude longitude; };
           modules = [
-            ./modules/wayland
-            # ./modules/xorg
+            # ./modules/wayland
+            ./modules/xorg
 
             ./modules/alias.nix
             ./modules/bookmarks.nix
