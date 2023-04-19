@@ -16,6 +16,5 @@
     copyq
     flashfocus
     flameshot
-    gnome3.gnome-keyring
   ];
 }

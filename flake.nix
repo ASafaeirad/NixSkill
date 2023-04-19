@@ -58,6 +58,7 @@
             ./modules/xorg
 
             ./modules/alias.nix
+            ./modules/gnome-keyring.nix
             ./modules/bookmarks.nix
             ./modules/xdg.nix
             ./modules/home.nix

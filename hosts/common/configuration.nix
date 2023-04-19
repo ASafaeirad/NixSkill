@@ -76,19 +76,22 @@
     acpi
   ];
   environment.shells = with pkgs; [ zsh ];
+  security = {
+    # pam.services.gnome-keyring.enableGnomeKeyring = true;
+    rtkit.enable = true;
+    sudo.extraRules = [
+      {
+        users = [ user ];
+        commands = [
+          {
+            command = "ALL";
+            options = [ "SETENV" "NOPASSWD" ];
+          }
+        ];
+      }
+    ];
+  };
 
-  security.rtkit.enable = true;
-  security.sudo.extraRules = [
-    {
-      users = [ user ];
-      commands = [
-        {
-          command = "ALL";
-          options = [ "SETENV" "NOPASSWD" ];
-        }
-      ];
-    }
-  ];
 
   services = {
     dbus.enable = true;
