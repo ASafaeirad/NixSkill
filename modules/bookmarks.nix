@@ -5,7 +5,7 @@ let
 in
 {
   home.shellAliases = {
-    dt = "cd ~/desktop";
+    dt = "cd $HOME/desktop";
     bin = "cd $HOME/.local/bin";
     tg = "cd $HOME/downloads/Telegram\ Desktop";
     dwn = "cd $HOME/downloads";
