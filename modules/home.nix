@@ -40,6 +40,7 @@
       kooha
       imv
       networkmanagerapplet
+      gh
 
       # Apps
       brave
