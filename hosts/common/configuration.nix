@@ -14,6 +14,8 @@
   };
 
   time.timeZone = timezone;
+  # If you don't use MS Windows comment this line
+  time.hardwareClockInLocalTime = true;
 
   i18n = {
     defaultLocale = locale;
@@ -92,11 +94,9 @@
     ];
   };
 
-
   services = {
     dbus.enable = true;
   };
-
 
   nix = {
     settings = {
