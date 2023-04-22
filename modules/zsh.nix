@@ -47,6 +47,15 @@ in
       custom = "${customDir}";
       extraConfig = ''
         fpath+=${customDir}/plugins/zsh-completions/src
+        bindkey '^[[A' history-substring-search-up
+        bindkey '^[[B' history-substring-search-down
+        bindkey '^ ' autosuggest-accept
+        bindkey -M vicmd '^e' edit-command-line
+        bindkey '^H' backward-kill-word # delete previous word with ctrl+backspace
+        bindkey '^z' undo
+        bindkey '^b' backward-word
+        bindkey '^w' forward-word # ctrl+backspace
+        bindkey '5~' kill-word    # ctrl+del
       '';
       plugins = [
         "sudo"
