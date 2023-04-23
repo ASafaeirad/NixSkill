@@ -41,6 +41,9 @@
       imv
       networkmanagerapplet
       gh
+      imagemagick
+      scrot
+      tesseract
 
       # Apps
       brave
