@@ -73,6 +73,7 @@
             ./modules/obs-studio
             ./modules/zathura.nix
             ./modules/pass.nix
+            ./modules/tmux.nix
           ];
         };
       };
