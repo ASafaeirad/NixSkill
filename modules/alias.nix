@@ -1,5 +1,6 @@
 _: {
   home.shellAliases = {
+    "dev" = "nix develop $HOME/.config/nix/";
     # Clear
     "c" = "clear";
     "clwer" = "clear";
@@ -41,7 +42,6 @@ _: {
     "cpwd" = "pwd | xsel -i --clipboard";
     "clocksync" = "sudo ntpdate 1.ro.pool.ntp.org";
     "fuck" = "killall -9";
-    "mk" = "mkdir -pv && cd $_";
     ":q" = "exit";
     "lsa" = "ls -AF --group-directories-first";
     "lless" = "l | less";
