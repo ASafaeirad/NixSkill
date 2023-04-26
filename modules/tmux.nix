@@ -1,5 +1,19 @@
 { pkgs, ... }:
 
+let
+  theme = builtins.fetchGit {
+    url = "https://github.com/ASafaeirad/skill-tmux-theme.git";
+  };
+
+  customPlugins = pkgs.stdenv.mkDerivation {
+    name = "tmux-custom-plugins";
+    phases = [ "buildPhase" ];
+    buildPhase = ''
+      mkdir -p $out/tmux-skill-theme
+      cp -r ${theme}/* $out/tmux-skill-theme/
+    '';
+  };
+in
 {
   programs.tmux = {
     enable = true;
@@ -13,11 +27,15 @@
       set -g renumber-windows on
       set -g display-time 4000
 
-      set-option -w -g monitor-activity off
-      set-option -g visual-activity off
+      set -g focus-events on
+      set -w -g monitor-activity off
+      set -g visual-activity off
 
-      set-option -g set-titles on
-      set-option -g set-titles-string "#T - #W"
+      set -g set-titles on
+      set -g set-titles-string "#T - #W"
+      set -g status-interval 5
+
+      bind R source-file $XDG_CONFIG_HOME/tmux/tmux.conf
 
       bind - split-window -v -c "#{pane_current_path}"
       bind | split-window -h -c "#{pane_current_path}"
@@ -35,52 +53,7 @@
       bind -r C-h select-window -t :-
       bind -r C-l select-window -t :+
 
-      ######################
-      #### Color Schema ####
-      ######################
-
-      mainbg=colour0
-      darkbg=colour236
-      selected=colour237
-      warn=colour1
-      main=colour3
-      hilight=colour11
-      disable=colour240
-      white=colour255
-
-      set -g status-left 32
-      set -g status-right 150
-      set -g status-interval 5
-
-      #  modes
-      setw -g mode-style bg=$main,fg=$warn,bold
-
-      # panes
-      set -g pane-border-style bg=$mainbg,fg=$disable
-      set -g pane-active-border-style bg=$mainbg,fg=$main
-
-      # statusbar
-      set -g status-position bottom
-      set -g status-justify left
-      set -g status-style bg=$main,fg=$darkbg,bold
-      set -g status-left ""
-      set -g status-right-style bg=$main
-      set -g status-right ' %H:%M '
-      set -g status-right-length 50
-      set -g status-left-length 20
-
-      setw -g window-status-current-style bg=$selected,fg=$white,bold
-      setw -g window-status-current-format ' #I:#W#F '
-
-      setw -g window-status-style bg=$main,fg=$darkbg
-      setw -g window-status-format ' #I:#W#F '
-
-      setw -g window-status-bell-style bg=$warn,fg=$darkbg,bold
-
-      # messages
-      set -g message-style bg=$hilight,fg=$darkbg,bold
-
-
+      run-shell "${customPlugins}/tmux-skill-theme/skill.tmux"
     '';
     historyLimit = 10000;
     mouse = true;
