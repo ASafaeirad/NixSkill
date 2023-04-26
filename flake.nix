@@ -63,6 +63,7 @@
             ./modules/xdg.nix
             ./modules/home.nix
             ./modules/node.nix
+            ./modules/lua.nix
             ./modules/zsh.nix
             ./modules/gtk.nix
             ./modules/music.nix
@@ -94,6 +95,7 @@
           node = import ./shells/node.nix { inherit pkgs; };
           python = import ./shells/python.nix { inherit pkgs; };
           rust = import ./shells/rust.nix { inherit pkgs; };
+          lua = import ./shells/lua.nix { inherit pkgs; };
         };
       }
     );
