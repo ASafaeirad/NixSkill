@@ -15,7 +15,6 @@
     packages = with pkgs; [
       bat
       fd
-      gnumake
       nixpkgs-fmt
       ripgrep
       wget

@@ -60,22 +60,23 @@
   nixpkgs.config.input-fonts.acceptLicense = true;
 
   environment.systemPackages = with pkgs; [
-    tmux
-    git
-    neovim
-    wget
+    acpi
+    bc
     exa
-    unzip
     ffmpeg
     ffmpegthumbnailer
+    git
     glib
-    pciutils
-    killall
-    zip
-    rar
+    gnumake
     inxi
-    bc
-    acpi
+    killall
+    neovim
+    pciutils
+    rar
+    tmux
+    unzip
+    wget
+    zip
   ];
   environment.shells = with pkgs; [ zsh ];
   security = {

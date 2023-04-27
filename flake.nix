@@ -57,13 +57,12 @@
             # ./modules/wayland
             ./modules/xorg
 
+            ./modules/dev
             ./modules/alias.nix
             ./modules/gnome-keyring.nix
             ./modules/bookmarks.nix
             ./modules/xdg.nix
             ./modules/home.nix
-            ./modules/node.nix
-            ./modules/lua.nix
             ./modules/zsh.nix
             ./modules/gtk.nix
             ./modules/music.nix
