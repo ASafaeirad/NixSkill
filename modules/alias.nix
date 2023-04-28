@@ -131,8 +131,8 @@ _: {
     "push!" = "git push origin --force --no-force-with-lease";
     "gcount" = "git shortlog -sn";
     "gl" = "git log --oneline --decorate";
-    "glog" = "git lg2 | emojify | less -r";
-    "gloga" = "git lg | emojify | less -r";
+    "glog" = "git lg";
+    "gloga" = "git lga";
     "gls" = "git log --stat";
     "gma" = "git merge --abort";
     "gr" = "git reset";

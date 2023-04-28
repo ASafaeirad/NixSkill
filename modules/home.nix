@@ -43,6 +43,7 @@
       imagemagick
       scrot
       tesseract
+      termdown
 
       # Apps
       brave
@@ -53,6 +54,7 @@
       notion-app-enhanced
       skypeforlinux
       anydesk
+      beekeeper-studio
     ];
 
     sessionVariables = {
