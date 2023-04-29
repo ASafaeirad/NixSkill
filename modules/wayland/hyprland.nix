@@ -32,7 +32,6 @@
     QT_STYLE_OVERRIDE = "kvantum";
   };
 
-  configFile."hypr/hyprland.conf".force = true;
   wayland.windowManager.hyprland = {
     enable = true;
     extraConfig = ''
