@@ -54,7 +54,7 @@
           inherit pkgs;
           extraSpecialArgs = { inherit hypr-contrib hyprland user latitude longitude; };
           modules = [
-            # ./modules/wayland
+            ./modules/wayland
             ./modules/xorg
 
             ./modules/dev

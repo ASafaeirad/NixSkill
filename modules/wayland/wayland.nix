@@ -3,7 +3,7 @@
 {
   home.packages = with pkgs; [
     wtype
-    rofi-wayland
+    # rofi-wayland
     wofi
     wl-clipboard
     wtype
