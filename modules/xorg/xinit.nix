@@ -16,7 +16,7 @@
 
     xrdb -merge $XDG_CONFIG_HOME/X11/Xresources
 
-    # eval $(gnome-keyring-daemon --start) &
+    eval $(gnome-keyring-daemon --start) &
     export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 
     xset b off
