@@ -56,8 +56,8 @@ _: {
     "up" = "nmcli c up";
     "connect" = "nmcli device wifi connect";
     "getip" = "curl -s -S https://icanhazip.com";
-    "mac" = "$WIFI_ADAPTOR";
-    "ping" = "getMac ping -i 1 -O";
+    "mac" = "getMac $WIFI_ADAPTOR";
+    "ping" = "ping -i 1 -O";
     "scanip" = "nmap -sn 192.168.1.0/24";
 
     # CURL
