@@ -26,16 +26,7 @@
       pkgs = import nixpkgs {
         inherit system nixpkgs;
         overlays = [
-          (self: super: {
-            cypress = super.cypress.overrideAttrs (old: {
-              version = "12.9.0";
-
-              src = super.fetchzip {
-                url = "https://cdn.cypress.io/desktop/12.9.0/linux-x64/cypress.zip";
-                sha256 = "sha256-26mkizwkF0qPX2+0rkjep28ZuNlLGPljCvVO73t34Lk=";
-              };
-            });
-          })
+          (import ./overlays)
         ];
         config = {
           allowUnfree = true;
