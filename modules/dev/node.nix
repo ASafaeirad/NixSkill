@@ -11,6 +11,8 @@
 
     sessionVariables = {
       PATH = "$(yarn global bin):$PATH";
+      CYPRESS_RUN_BINARY="$(which Cypress)";
+      CYPRESS_INSTALL_BINARY="0";
     };
 
     shellAliases = {
