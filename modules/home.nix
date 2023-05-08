@@ -47,6 +47,8 @@
 
       # Apps
       brave
+      chromium
+      google-chrome
       firefox
       slack
       tdesktop
