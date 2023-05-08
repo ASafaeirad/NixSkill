@@ -57,6 +57,7 @@
       skypeforlinux
       anydesk
       beekeeper-studio
+      appflowy
     ];
 
     sessionVariables = {
