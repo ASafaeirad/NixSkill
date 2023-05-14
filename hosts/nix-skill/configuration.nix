@@ -13,4 +13,5 @@
   };
 
   networking.hostName = "nix-skill";
+  services.blueman.enable = true;
 }
