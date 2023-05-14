@@ -3,11 +3,12 @@
 with pkgs;
 mkShell {
   buildInputs = [
-    python310Packages.pip
-    python310Packages.pip-tools
-    python310Packages.python-lsp-black
-    python310Packages.python-lsp-server
-    python310Packages.python-lsp-jsonrpc
+    python311Packages.pip
+    python311Packages.pip-tools
+    python311Packages.python-lsp-black
+    python311Packages.python-lsp-server
+    python311Packages.python-lsp-jsonrpc
+    python311
   ];
   shellHook = ''
     export PYTHONPYCACHEPREFIX = "$XDG_CACHE_HOME/python"
