@@ -1,6 +1,10 @@
 { config, pkgs, ... }:
 
 {
+  programs.browserpass = {
+    enable = true;
+  };
+
   home = {
     packages = with pkgs; [
       pass-git-helper
