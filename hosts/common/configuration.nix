@@ -77,6 +77,7 @@
     unzip
     wget
     zip
+    xorg.xhost
   ];
   environment.shells = with pkgs; [ zsh ];
   security = {
