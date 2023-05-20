@@ -9,12 +9,13 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    skill = { url = "path:./bin"; };
     nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
     flake-utils.url = "github:numtide/flake-utils";
     hypr-contrib.url = "github:hyprwm/contrib";
   };
 
-  outputs = inputs @ { self, nixpkgs, hyprland, home-manager, nixpkgs-wayland, flake-utils, hypr-contrib, ... }:
+  outputs = inputs @ { self, nixpkgs, hyprland, home-manager, nixpkgs-wayland, flake-utils, hypr-contrib, skill, ... }:
     let
       user = "skill";
       system = "x86_64-linux";
@@ -43,7 +44,7 @@
       homeConfigurations = {
         skill = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
-          extraSpecialArgs = { inherit hypr-contrib hyprland user latitude longitude; };
+          extraSpecialArgs = { inherit hypr-contrib skill hyprland user latitude longitude; };
           modules = [
             ./modules/wayland
             ./modules/xorg

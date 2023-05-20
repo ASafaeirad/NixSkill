@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, user, latitude, longitude, ... }:
+{ config, pkgs, inputs, user, latitude, longitude, skill, ... }:
 
 {
   programs = {
@@ -18,8 +18,11 @@
       nixpkgs-fmt
       ripgrep
       wget
+      gcc
+      openssl
 
       # DE
+      skill
       alacritty
       pavucontrol
       xdg-utils
@@ -57,7 +60,6 @@
       skypeforlinux
       anydesk
       beekeeper-studio
-      appflowy
     ];
 
     sessionVariables = {
