@@ -36,7 +36,6 @@ _: {
     "gpgreload" = "gpg-connect-agent reloadagent /bye";
     "x" = "sudo chmod +x";
     "path" = "echo \${PATH//:/\\\\n} | sort";
-    "fpath" = "$fpath | tr ' ' '\n' | sort";
     "findstr" = "grep -rnw";
     "afind" = "ack -il";
     "cpwd" = "pwd | xsel -i --clipboard";

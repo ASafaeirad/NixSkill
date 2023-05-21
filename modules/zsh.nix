@@ -34,6 +34,7 @@ in
     autocd = true;
     enableAutosuggestions = true;
     historySubstringSearch.enable = true;
+    initExtra = "unalias l";
     history = {
       expireDuplicatesFirst = true;
       ignorePatterns = [ ];
