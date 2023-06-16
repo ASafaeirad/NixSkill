@@ -60,6 +60,7 @@
       skypeforlinux
       anydesk
       beekeeper-studio
+      noisetorch
     ];
 
     sessionVariables = {
