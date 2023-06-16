@@ -12,6 +12,7 @@
       input-fonts
       oxygenfonts
       freefont_ttf
+      intel-one-mono
 
       # Icons
       font-awesome_5
