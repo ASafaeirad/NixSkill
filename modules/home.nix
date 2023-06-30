@@ -20,6 +20,7 @@
       wget
       gcc
       openssl
+      dig
 
       # DE
       skill
