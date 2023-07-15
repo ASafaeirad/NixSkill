@@ -94,8 +94,8 @@ _: {
     # Docker
     "dc" = "docker-compose";
     "dcd" = "docker-compose -f ./docker-compose.dev.yml";
-    "drmi" = "$(docker images -a --filter=dangling=true -q) 2>/dev/null";
-    "drm" = "$(docker ps --filter=status=exited --filter=status=created -q) 2>/dev/null";
+    "drmi" = "docker rmi $(docker images -a --filter=dangling=true -q) 2>/dev/null";
+    "drm" = "docker rm $(docker ps --filter=status=exited --filter=status=created -q) 2>/dev/null";
     "dps" = "docker ps -a";
     "dim" = "docker images | tail -n +2 | sort";
 
