@@ -16,6 +16,6 @@
     copyq
     flashfocus
     flameshot
-    peek
+    # peek
   ];
 }
