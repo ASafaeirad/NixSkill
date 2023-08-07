@@ -18,9 +18,9 @@
       nixpkgs-fmt
       ripgrep
       wget
-      gcc
       openssl
       dig
+      jq
 
       # DE
       skill

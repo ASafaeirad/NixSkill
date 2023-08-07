@@ -1,4 +1,4 @@
-{ config, hyprland, pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   imports = [
@@ -7,4 +7,10 @@
     ./rust.nix
     ./python.nix
   ];
+  home = {
+    packages = with pkgs; [
+      gcc
+      act
+    ];
+  };
 }
