@@ -5,6 +5,7 @@
     ./lua.nix
     ./node.nix
     ./rust.nix
+    ./java.nix
     ./python.nix
   ];
   home = {

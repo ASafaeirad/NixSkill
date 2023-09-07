@@ -15,7 +15,7 @@ in
     cards = "$EDITOR ${INFO}/card.yml";
     infos = "$EDITOR ${INFO}/info.yml";
     devs = "cd ${DEVS}";
-    egfront = "cd ${DEVS}/estateguru-frontend";
+    egfront = "cd ${DEVS}/eg/frontend";
     charity = "cd ${DEVS}/the-charity-frontend";
     notion-icons = "cd ${DEVS}/notion-icons";
   };

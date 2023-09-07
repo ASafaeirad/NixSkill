@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
 sudo nix-env --delete-generations old --profile /nix/var/nix/profiles/system
+nix-store --gc
 sudo nix-collect-garbage -d
 
