@@ -34,13 +34,15 @@
 
   users = {
     groups."${user}" = { };
+    groups.plugdev = { };
+
     defaultUserShell = pkgs.zsh;
     users = {
       "${user}" = {
         isNormalUser = true;
         description = user;
         shell = pkgs.zsh;
-        extraGroups = [ "networkmanager" "wheel" "video" "audio" user ];
+        extraGroups = [ "networkmanager" "wheel" "video" "audio" "plugdev" user ];
       };
     };
   };
