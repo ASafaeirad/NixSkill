@@ -64,7 +64,7 @@
   environment.systemPackages = with pkgs; [
     acpi
     bc
-    exa
+    eza
     ffmpeg
     ffmpegthumbnailer
     git

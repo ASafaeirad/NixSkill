@@ -15,7 +15,6 @@
     git
     neovim
     wget
-    exa
     unzip
     ffmpeg
     ffmpegthumbnailer

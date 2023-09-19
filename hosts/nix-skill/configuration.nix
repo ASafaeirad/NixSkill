@@ -5,6 +5,7 @@
     ./hardware-configuration.nix
   ];
 
+  boot.swraid.enable = false;
   boot.loader = {
     systemd-boot.enable = true;
     efi.canTouchEfiVariables = true;
