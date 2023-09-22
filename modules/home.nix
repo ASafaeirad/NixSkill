@@ -48,6 +48,7 @@
       scrot
       tesseract
       termdown
+      yt-dlp
 
       # Apps
       brave
