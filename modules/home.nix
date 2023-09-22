@@ -49,6 +49,7 @@
       tesseract
       termdown
       yt-dlp
+      distrobox
 
       # Apps
       brave
