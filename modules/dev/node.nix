@@ -8,6 +8,7 @@
       yarn
       nodePackages.pnpm
       cypress
+      playwright
       bun-next
     ];
 

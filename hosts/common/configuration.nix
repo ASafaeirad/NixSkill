@@ -58,9 +58,6 @@
     };
   };
 
-  nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.input-fonts.acceptLicense = true;
-
   environment.systemPackages = with pkgs; [
     acpi
     bc
